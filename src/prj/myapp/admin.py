@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . import models
+from .models.module import *
 
 # Register your models here.
-admin.site.register(models.Module)
+admin.site.register(Module)
