@@ -9,7 +9,7 @@ class Schedule(models.Model):
     day =  models.CharField(max_length=3)
     date = models.DateField()
     name = models.CharField(max_length=256)
-    modulde = models.ForeignKey(Module, on_delete=models.CASCADE)
+    module = models.ForeignKey(Module, on_delete=models.CASCADE)
 
     class Meta:
         unique_together = (('plage', 'semestre', 'day'),)

@@ -4,6 +4,11 @@
 
 {% block content %}
 
+<div class="py-2 d-grid gap-2 d-md-flex justify-content-md-end">
+  <a href="{% url 'module_import' %}" class="btn btn-primary px-2">Import</a>  
+  <a href="{% url 'module_create' %}" class="btn btn-primary">Add</a> 
+</div>
+
 {% if module_list %}
 <table class="table">
     <thead>
@@ -21,7 +26,9 @@
         <td>{{ w.code }}</td>
         <td>{{ w.name }}</td>
         <td>
-          <a href="/view/{{ w.id }}" class="btn btn-info">View</a> | <a href="/put/{{ w.id }}" class="btn btn-primary">Edit</a> | <a href="/del/{{ w.id }}" class="btn btn-danger">Delete</a>
+          <a href="{% url 'module_detail' w.pk %}" class="btn btn-info">View</a> | 
+          <a href="{% url 'module_update' w.pk %}" class="btn btn-primary">Edit</a> | 
+          <a href="{% url 'module_delete' w.pk %}" class="btn btn-danger">Delete</a>
         </td>
       </tr>
       {% endfor %}
